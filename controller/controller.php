@@ -23,7 +23,7 @@
     }
 
     //***dispatch()***
-    public function dispatch($action,$params = array()){
+    public function dispatch($action,params = array()){
       //$action : 액션명
       //$params : Routing정보
       $this->_action = $action; //액션명을 현재 컨트롤러의 프로퍼티 $_action에 저장
@@ -39,7 +39,7 @@
         throw new AuthorizedException(); //AuthorizedException 예외 발생
 
       }
-      $content = $this->$action_method($params); //액션 메소드를 실행하여 컨텐츠를 App클래스의 getcontent로 반환
+      $content = $this->$action_mothod($params); //액션 메소드를 실행하여 컨텐츠를 App클래스의 getcontent로 반환
       return $content;
 
     }
@@ -68,7 +68,7 @@
       //$template : 레이아웃 파일명
       $info = array(
         'request' => $this ->_request, //Request인스탄스
-        'base_url' => $this ->_request->getBaseUrl(), //Base URL정보 index의 base_url
+        'base_url' => $this ->_request->getBaseUrl(), //Base URL정보
         'session' => $this->_session, //Session정보
       );
       $view = new View($this->_application // view 클래스 인스탄스화
@@ -81,7 +81,7 @@
       if(is_null($template)){
         $template = 'template';
       }
-      $path = $this ->_controller.'/'.$viewFile; //뷰파일의 경로 정보
+      $path = $this ->_controller.'/'.$viewFile //뷰파일의 경로 정보
       $contents = $view -> render($path,
                                   $param,
                                   $template); //view 클래스의 render()
@@ -104,8 +104,6 @@
     //Action method 에서 render()호추시 파라메타 전달을 위해 실행
     protected function getToken($form){
       $key = 'token/'.$form; //$_SESSION변수에서 token을 읽어옴
-      $tokens = $this->_session
-                ->get($key, array()); //$_SESSION변수에 Token을 저장하기 위한 키 이름 작성
       if(count($tokens)>=10){ //토큰의 수가 10개를 넘지 않도록 조절
         array_shift($tokens);
         //http://php.net/manual/kr/function.array-shift.php
