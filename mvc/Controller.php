@@ -10,7 +10,6 @@
     protected $_authentication=array(); //보안인증이 필요한 페이지인지 (true/false)를 저장함
     const PROTOCOL = 'http://';
     const ACTION = 'Action';
-
     //***생성자***
     public function __construct($application){
       $this->_controller = strtolower(substr(get_class($this),0,-10));
@@ -21,27 +20,22 @@
       $this->_session = $application -> getSessionObject();
       $this->_connect_model = $application -> getConnectModelObject();
     }
-
     //***dispatch()***
     public function dispatch($action,params = array()){
       //$action : 액션명
       //$params : Routing정보
       $this->_action = $action; //액션명을 현재 컨트롤러의 프로퍼티 $_action에 저장
       $action_method=$action.self::ACTION; //액션 메소드 저장:액션명 + action
-
       if(!method_exists($this, $action_method)){ //액션메소드가 존재하지 않으면 에러화면
         //http://php.net/manual/kr/function.metod-exists.php
         $this->httpNotFound();
-
       }
       if($this->isAuthentication($action) && !$this->_session->isAuthenticated()){
         //요청된 액션에 대해 인증이 필요한지 여부와 인증이 완료되었는지 여부체크
         throw new AuthorizedException(); //AuthorizedException 예외 발생
-
       }
       $content = $this->$action_mothod($params); //액션 메소드를 실행하여 컨텐츠를 App클래스의 getcontent로 반환
       return $content;
-
     }
     //***httpNotFound()***
     protected function httpNotFound(){
@@ -86,9 +80,7 @@
                                   $param,
                                   $template); //view 클래스의 render()
       return $contents;
-
     }
-
     //***redirect()***
     protected function redirect($url){
       $host = $this->_request->getHostName();
@@ -113,12 +105,9 @@
       //http://php.net/manual/kr/function.password-hash.php
       //password_hash()으로 생성한 패스워드 hash정보를 $tokens에 저장
       $tokens[]=$token;
-
       $this->_session->set($key,$tokens);
-
       return $token;
     }
-
     //***checkToken()***
     //세션이 유효한지 체크,폼 입력데이터가 전송될때 사용하는 action에서 호출
     //토큰의 키를 작성, 작성한 키에 해당하느 토클을 $_session으로 부터 획득

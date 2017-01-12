@@ -41,3 +41,4 @@ URL 예제
 - http://weblog.localhost/account/signup
   base URL: index.php
   path: /account/signup (컨트롤러와 액션의 정보가 담김)
+  
