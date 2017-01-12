@@ -1,0 +1,91 @@
+/* body Element (������ ��ü)�� ������ CSS */
+body{
+    margin: 0;
+    padding: 0;
+      /* font-family: �ʫ��ꫪ, Osaka;*/
+    font-family: helvetica, 'MS PGothic', Osaka, "Malgun Gothic", gulim;
+    color: #000000;
+    background-color: #f0f8ff;
+}
+
+/* h2, h3 Element�� ����*/
+h2, h3{
+  font-size: 1.0em;
+}
+/* a Element(��ũ)�� ����*/
+a {
+  color: #3399cc;
+}
+/* ID Selector #header�� ����*/
+#header{
+  margin: 0;
+  padding: 0px;
+  border-top: 2px solid #ff0000;
+  border-bottom: 2px solid #ff0000;
+}
+
+/* ID Selector #header Element�� ���Ե� h1 Element�� ����*/
+#header h1{
+  font-size: 1.4em;
+  font-family: Times New Romman, Osaka;
+  margin: 5px 100px;
+}
+/* ID Selector #header Element�� ���Ե� h1->a Element�� ����*/
+#header h1 a{
+  color: #ff0000;
+  text-decoration: none;
+}
+/* ID Selecter #header Element�� ���Ե� h1->a Element�� mouseover�Ǹ� ����*/
+#header h1 a:hover{
+  color: #ff6600;
+}
+
+/* ID Selector #nav(�׺����̼�) Element�� ����*/
+#nav{
+  margin: 0 100px;
+}
+
+/* ID Selector #main(���� ������) Element�� ����*/
+#main{
+  margin: 0 100px;
+}
+
+/*Class Selector status�� �����Ǿ��ִ� Element�� ����*/
+.status{
+  padding: 10px;
+  border: 2px solid #cccccc;
+  margin-bottom: 10px;
+  background-color: #ffffff
+}
+
+/* Class Selector error_list�� �����Ǿ��ִ� ul Element�� ����*/
+ul.error_list{
+  border: 1px solid #ff0000;
+  background-color: #ffcccc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+/* Class Selector error_list�� �����Ǿ� �ִ� ul Element�� ���ԵǾ� �ִ� li Element�� ����*/
+ul.error_list li{
+  color: #ff0000;
+}
+
+/* Class Selector account�� �����Ǿ� �ִ� Element�� ����*/
+.account{
+  float:left;
+  background-color: #ffcccc;
+  padding: 0px 30px 10px 30px;
+  margin-left: 60px;
+  width: 200px;
+}
+
+/* Class Selector f_user�� �����Ǿ� �ִ� Element�� ����*/
+.f_user{
+  float:left;
+  background-color: #ffcccc;
+  padding: 0px 30px 10px 30px;
+  margin-left: 60px;
+  width: 200px;
+}

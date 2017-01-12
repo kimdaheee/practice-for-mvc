@@ -56,7 +56,7 @@ MVC의 장점
 
 ※ Routing(ルーチング): 실행해야 하는 컨트롤러와 아쿠숀을 결정
   ex) Request URL->http://www.example.com/account
-      처리 컨트롤러(Action Conroller)
+      처리 컨트롤러(Action Controller)
       AccountController
       indexAction()
 ※ Application Class

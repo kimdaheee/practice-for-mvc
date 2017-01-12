@@ -28,6 +28,7 @@
 			//자동출력의 여부를 결정(기본값은 TRUE or 1 - on, FALSE or 0 - off)
 			//ob_get_clean()
 			//현재 버퍼 내용을 반환하고 출력 버퍼를 삭제
+			//extract: 키를 변수로, 값을 변수의 값으로 
 			ob_start();
 			ob_implicit_flush(0);
 			require $view; //view파일이 읽혀짐

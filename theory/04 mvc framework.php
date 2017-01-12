@@ -13,4 +13,4 @@
 
     1) ConnectionModel: DB 접속 관리 클래스
                         PDO 객체를 생성관리 클래스
-    2) ExecuteModel: DB쿠
+    2) ExecuteModel: DB 엑세스를 처리하는 기본 클래스

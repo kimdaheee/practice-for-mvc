@@ -11,7 +11,7 @@ abstract class AppBase{//계승을 전제로 하는 클래스로 abstract클래�
   //Router 클래스의 인스턴스를 저장하는 프로파티
   protected $_router;
   //로그인 하였을 때의 컨트롤러와 액션의 조합을 저장하는 배열 프로파티
-  protected $_signinAction = array();
+  protected $_signinAction = array();//BlogApp에서 재정의 됨
   //에러 표시 온/오프를 저장하기 위한 프로파티
   protected $_displayErrors;
   //Controller명의 접미사
