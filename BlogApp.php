@@ -7,9 +7,9 @@ class BlogApp extends AppBase {
   protected function doDbConnection() {
     $this->_connectModel->connect('master', //접속이름
     array(
-      'string'    => 'mysql:dname=weblog;host=localhost;charset=utf8',  //DB이름 - weblog
-      'user'      => 'root',                                            //DB사용자명
-      'password'  => 'node'                                             //DB사용자의 패스워드
+      'string'    => 'mysql:dname=mvc_db;host=localhost;charset=utf8',  //DB이름 - weblog
+      'user'      => 'dahee',                                            //DB사용자명
+      'password'  => 'dahee'                                             //DB사용자의 패스워드
     ));
   }//doDbConnection - function
 
